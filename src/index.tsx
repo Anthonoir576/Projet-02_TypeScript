@@ -1,11 +1,30 @@
-import React        from "react";
-import ReactDOM from "react-dom";
+import React          from "react";
+import ReactDOM       from "react-dom";
+import { useState }   from "react";
 
 
 const App: React.FC = () => {
+
+    const [nom, setNom]    = useState('');
+    const [mail, setMail]  = useState('');
+
+    const submitFonction = (e: React.FormEvent<HTMLFormElement>) => {
+
+        e.preventDefault();
+
+
+        
+
+    };
+
+
     return (
         <div>
             <h1>CRM</h1>
+            <form 
+                onSubmit={submitFonction}
+            >
+            </form>
         </div>
     );
 };

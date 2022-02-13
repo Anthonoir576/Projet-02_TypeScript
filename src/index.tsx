@@ -36,6 +36,7 @@ const App: React.FC = () => {
                 <p className="client">
                     Entrer les coordonnées de votre client :
                 </p>
+
                 <label htmlFor="nom">
                     Nom :
                 </label>
@@ -43,9 +44,11 @@ const App: React.FC = () => {
                        onChange={e => setNom(e.target.value)}
                        id="nom"
                 />
+
                 <br />
                 <br />
                 <br />
+
                 <label htmlFor="email">
                     E-mail :
                 </label>

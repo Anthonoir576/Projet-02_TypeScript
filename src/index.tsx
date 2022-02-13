@@ -6,6 +6,13 @@ import ReactDOM       from "react-dom";
 import { useState }   from "react";
 
 import '../src/styles/style.css';
+
+export type address = {
+
+    nom   : string;
+    mail  : string;
+
+};
 // ---------------
 
 
@@ -13,15 +20,21 @@ import '../src/styles/style.css';
 // --- LOGIQUE ---
 const App: React.FC = () => {
 
-    const [nom, setNom]    = useState('');
-    const [mail, setMail]  = useState('');
+    const [nom, setNom]            = useState('');
+    const [mail, setMail]          = useState('');
+    const [adresses, setAdresses]  = useState<address[]>([]);
+
 
     const submitFonction = (e: React.FormEvent<HTMLFormElement>) => {
 
         e.preventDefault();
 
+        const newAddress : address = {
+            nom,
+            mail,
+        };         
 
-
+        setAdresses([...adresses, newAddress]);
 
     };
 
@@ -63,8 +76,22 @@ const App: React.FC = () => {
                 <button type="submit">
                     Ajouter
                 </button>
-
             </form>
+            <hr />
+
+            <p className="address">
+                Mes adresses :
+            </p>
+
+            {adresses.length > 0 && (
+            <ul>
+                {adresses.map((el) => ( 
+                    <li key={el.mail}>
+                         {el.nom} : {el.mail}
+                    </li>
+                ))}
+            </ul>
+            )}
         </div>
     );
 };

@@ -35,7 +35,8 @@ const App: React.FC = () => {
         };         
 
         setAdresses([...adresses, newAddress]);
-
+        setNom('');
+        setMail('');
     };
 
 

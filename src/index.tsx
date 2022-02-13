@@ -57,6 +57,13 @@ const App: React.FC = () => {
                        id="email"
                 />
 
+                <br />
+                <br />
+
+                <button type="submit">
+                    Ajouter
+                </button>
+
             </form>
         </div>
     );

@@ -28,10 +28,32 @@ const App: React.FC = () => {
 
     return (
         <div>
-            <h1>CRM</h1>
+            <h1> - C.R.M - </h1>
             <form 
                 onSubmit={submitFonction}
+                className='formulaire'
             >
+                <p className="client">
+                    Entrer les coordonnées de votre client :
+                </p>
+                <label htmlFor="nom">
+                    Nom :
+                </label>
+                <input value={nom}
+                       onChange={e => setNom(e.target.value)}
+                       id="nom"
+                />
+                <br />
+                <br />
+                <br />
+                <label htmlFor="email">
+                    E-mail :
+                </label>
+                <input value={mail}
+                       onChange={e => setMail(e.target.value)}
+                       id="email"
+                />
+
             </form>
         </div>
     );
